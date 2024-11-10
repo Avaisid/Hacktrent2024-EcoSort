@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EcoSort AI - Waste Sorting Made Easy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">EcoSort AI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#camera">Capture Image</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="jumbotron text-center mt-4">
+        <div class="container">
+            <h1 class="display-4">Welcome to EcoSort AI</h1>
+            <p class="lead">Using the power of AI to help you sort waste responsibly and contribute to a sustainable future!</p>
+            <a href="#camera" class="btn btn-success btn-lg">Get Started</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About EcoSort AI</h2>
+                    <p>EcoSort AI is an innovative platform designed to help users make environmentally friendly decisions about waste disposal. By using AI-powered image recognition, you can quickly determine if an item is recyclable, compostable, or destined for landfill.</p>
+                    <p>Join us in reducing waste contamination and improving recycling efforts. Every small step counts towards a cleaner planet!</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/waste-sorting.png" alt="Waste Sorting" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Camera Capture Section -->
+    <section id="camera" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Capture Waste Image</h2>
+            <div class="text-center">
+                <video id="cameraStream" width="300" height="225" autoplay></video>
+                <div class="mt-3">
+                    <button id="captureButton" class="btn btn-primary">Capture Image</button>
+                </div>
+                <div class="mt-3">
+                    <button id="uploadButton" class="btn btn-secondary" disabled>Upload Image</button>
+                </div>
+                <canvas id="capturedImage" width="300" height="225" class="mt-3 d-none"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Key Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">AI-Powered Image Recognition</h5>
+                            <p class="card-text">Simply capture a photo of your waste item, and our AI will classify it into the correct category.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Personalized Recommendations</h5>
+                            <p class="card-text">Get personalized tips on how to dispose of waste responsibly, based on your region and item type.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Track Your Impact</h5>
+                            <p class="card-text">See the difference you're making by tracking your waste sorting activities and contributing to a greener planet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+<section id="statistics" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Impact</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>500+</h3>
+                <p>Items sorted using EcoSort AI</p>
+            </div>
+            <div class="col-md-4">
+                <h3>300 kg</h3>
+                <p>Waste diverted from landfills</p>
+            </div>
+            <div class="col-md-4">
+                <h3>150+</h3>
+                <p>Happy users contributing to a cleaner planet</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            How does EcoSort AI classify waste items?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        EcoSort AI uses an AI-powered model to analyze the image of the item you upload and determines the correct waste category.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Is the platform free to use?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Yes, EcoSort AI is completely free to use for all individuals looking to sort waste responsibly.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Environmental Tips Banner -->
+<section class="bg-success text-white py-4">
+    <div class="container text-center">
+        <h2>Join Our Green Mission!</h2>
+        <p class="lead">Learn how to reduce, reuse, and recycle effectively. Check out our blog for environmental tips!</p>
+        <a href="#blog" class="btn btn-light btn-lg mt-3">Read More</a>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+<section id="testimonials" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">What Our Users Say</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>EcoSort AI makes waste sorting so much easier! I love knowing that I am contributing to a cleaner environment.</p>
+                            <footer class="blockquote-footer">Alex Johnson, <cite title="Source Title">Toronto, Canada</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>The AI is accurate and the recommendations are very useful. I never knew sorting waste could be this simple!</p>
+                            <footer class="blockquote-footer">Maria Lopez, <cite title="Source Title">Vancouver, Canada</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>I’ve learned so much about waste management thanks to EcoSort AI. Great platform!</p>
+                            <footer class="blockquote-footer">John Doe, <cite title="Source Title">Seattle, USA</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Team Section -->
+<section id="team" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Meet Our Team</h2>
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <img src="images/team-member1.jpg" alt="Team Member 1" class="img-fluid rounded-circle mb-3">
+                <h5>Avais Siddiqui</h5>
+                <p>Project Manager</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="images/team-member2.jpg" alt="Team Member 2" class="img-fluid rounded-circle mb-3">
+                <h5>Dikshith Reddy</h5>
+                <p>Web Developer</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="images/team-member3.jpg" alt="Team Member 3" class="img-fluid rounded-circle mb-3">
+                <h5>Anthony</h5>
+                <p>UX/UI Designer</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="images/team-member4.jpg" alt="Team Member 4" class="img-fluid rounded-circle mb-3">
+                <h5>Dev Patel</h5>
+                <p>Cloud & DataBase</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Blog Section -->
+<section id="blog" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Latest Articles</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <img src="images/blog1.jpg" class="card-img-top" alt="Blog 1">
+                    <div class="card-body">
+                        <h5 class="card-title">10 Tips for Reducing Household Waste</h5>
+                        <p class="card-text">Simple ways you can reduce your household waste and contribute to a cleaner environment.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <img src="images/blog2.jpg" class="card-img-top" alt="Blog 2">
+                    <div class="card-body">
+                        <h5 class="card-title">How Recycling Impacts Our Planet</h5>
+                        <p class="card-text">Learn about the impact of recycling and how it helps in conserving natural resources.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>Contact us at <a href="mailto:info@ecosortai.com" class="text-white">info@ecosortai.com</a></p>
+            <p>&copy; 2024 EcoSort AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Camera JavaScript -->
+    <script>
+        // Access the device camera and stream to video element
+        const cameraStream = document.getElementById('cameraStream');
+        const captureButton = document.getElementById('captureButton');
+        const uploadButton = document.getElementById('uploadButton');
+        const capturedImage = document.getElementById('capturedImage');
+        const canvasContext = capturedImage.getContext('2d');
+        let stream;
+
+        // Start video stream
+        function startCamera() {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(mediaStream) {
+                    stream = mediaStream;
+                    cameraStream.srcObject = stream;
+                    cameraStream.classList.remove('d-none');
+                    capturedImage.classList.add('d-none');
+                    captureButton.textContent = "Capture Image";
+                    uploadButton.disabled = true;
+                })
+                .catch(function(err) {
+                    console.error("Error accessing the camera: ", err);
+                });
+        }
+
+        startCamera();
+
+        // Capture button functionality
+        captureButton.addEventListener('click', function() {
+            if (captureButton.textContent === "Capture Image") {
+                // Capture the image from the video stream
+                canvasContext.drawImage(cameraStream, 0, 0, capturedImage.width, capturedImage.height);
+                capturedImage.classList.remove('d-none');
+                uploadButton.disabled = false;
+                
+                // Stop the video stream
+                if (stream) {
+                    stream.getTracks().forEach(track => track.stop());
+                }
+                cameraStream.classList.add('d-none');
+                captureButton.textContent = "Re-Capture Image";
+            } else {
+                // Re-capture functionality
+                startCamera();
+            }
+        });
+
+         // Access the upload button functionality and add logic for response pop-ups
+    uploadButton.addEventListener('click', function() {
+        // Convert the image to Blob and upload to AWS S3
+        capturedImage.toBlob(function(blob) {
+            const formData = new FormData();
+            formData.append('file', blob, 'captured-image-' + new Date().toISOString() + '.png');
+
+            // Upload to AWS S3 using a Flask backend
+            fetch('http://localhost:5000/upload_to_s3', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Upload Successful:', data);
+                
+                // Show pop-up based on classification type
+                if (data.classification) {
+                    showPopup(data.classification);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }, 'image/png');
+    });
+
+    // Function to show pop-ups based on classification type
+    function showPopup(classificationType) {
+        let message = '';
+        
+        switch (classificationType) {
+            case 'recyclable':
+                message = 'The item is recyclable! Please use the recycling bin.';
+                break;
+            case 'compostable':
+                message = 'The item is compostable! Please dispose of it in the compost bin.';
+                break;
+            case 'landfill':
+                message = 'The item should go to landfill. Please ensure it is placed properly.';
+                break;
+            case 'hazardous':
+                message = 'This is a hazardous item. Please follow proper disposal guidelines for hazardous waste.';
+                break;
+            default:
+                message = 'Unknown classification. Please try again.';
+                break;
+        }
+
+        alert(message);  // Display the pop-up using alert (you can replace this with a more stylish modal)
+    }
+
+    </script>
+
+</body>
+</html>
